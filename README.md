@@ -102,6 +102,7 @@ paer_admin_yii2.sql     数据库文件
 
 ### 🎨 预览项目
 
+|  |  |
 |---------------------|---------------------|
 | ![](/backend/web/plugins/admin/images/demos/1.png)  |![](/backend/web/plugins/admin/images/demos/1.png)  |
 | ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)   |
