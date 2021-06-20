@@ -104,11 +104,9 @@ paer_admin_yii2.sql     数据库文件
 
 |  |  |
 |---------------------|---------------------|
-| ![](/backend/web/plugins/admin/images/demos/1.png)  |![](/backend/web/plugins/admin/images/demos/1.png)  |
-| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)   |
-| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)  |
-| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)   |
-| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)  |
-|![](/backend/web/plugins/admin/images/demos/1.png)| ![](/backend/web/plugins/admin/images/demos/1.png)   |
+| ![](/backend/web/plugins/admin/images/demos/1.png)  |![](/backend/web/plugins/admin/images/demos/2.png)  |
+| ![](/backend/web/plugins/admin/images/demos/3.png)|  ![](/backend/web/plugins/admin/images/demos/4.png)   |
+| ![](/backend/web/plugins/admin/images/demos/5.png)|  ![](/backend/web/plugins/admin/images/demos/6.png)  |
+| ![](/backend/web/plugins/admin/images/demos/7.png)|  ![](/backend/web/plugins/admin/images/demos/8.png)   |
 
 
