@@ -85,13 +85,13 @@ paer_admin_yii2.sql     数据库文件
 
 ```
 
-#### 🔧 安装配置
+### 🔧 安装配置
 
 * git clone https://gitee.com/imbee/pear-admin-yii2.git
 * 更新包composer update(可以忽略)
 * 将网站入口部署至backend/web/目录下面
 
-#### ⚡ 启动GatewayWorker
+### ⚡ 启动GatewayWorker
 
 >Windows
 * 第一步 cd vendor/GatewayWorker
@@ -100,9 +100,8 @@ paer_admin_yii2.sql     数据库文件
 * 第一步 cd vendor/GatewayWorker
 * 第二步 php start.php start -d
 
-#### 🎨 预览项目
+### 🎨 预览项目
 
-|  |  |
 |---------------------|---------------------|
 | ![](/backend/web/plugins/admin/images/demos/1.png)  |![](/backend/web/plugins/admin/images/demos/1.png)  |
 | ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)   |
