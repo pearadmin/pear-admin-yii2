@@ -2,15 +2,15 @@
 <div align="center">
 <br/>
 <br/>
-<img src="/public/static/admin/images/logo.png" width="90px" style="margin-top:30px;"/>
+<img src="/plugins/admin/images/logo.png" width="90px" style="margin-top:30px;"/>
    <h1 align="center">
-    Pear Admin Think
+    Pear Admin Yii2
    </h1>
     <h4 align="center">
     开 箱 即 用 的 PHP 快 速 开 发 平 台
   </h4> 
 
-  [预 览](http://pear.jianla.cn)   |   [官 网](http://www.pearadmin.com/)   |   [群聊](https://jq.qq.com/?_wv=1027&k=5OdSmve)   |   [社区](http://forum.pearadmin.com/)
+  [预 览](http://pear.tsaihoo.com/)   |   [官 网](http://www.pearadmin.com/)   |   [群聊](https://jq.qq.com/?_wv=1027&k=5OdSmve)   |   [社区](http://forum.pearadmin.com/)
 
 </div>
 
@@ -19,10 +19,10 @@
         <img src="https://img.shields.io/badge/Pear Admin Layui-3.6.5+-green.svg" alt="Pear Admin Layui Version">
     </a>
 	<a href="#">
-        <img src="https://img.shields.io/badge/php-7.3.0+-green.svg" alt="PHP Version">
+        <img src="https://img.shields.io/badge/php-7.0.10+-green.svg" alt="PHP Version">
     </a>
     <a href="#">
-        <img src="https://img.shields.io/badge/mysql-5.7.0+-green.svg" alt="MYSQL Version">
+        <img src="https://img.shields.io/badge/mysql-5.7.14+-green.svg" alt="MYSQL Version">
     </a>
 </p>
 
@@ -30,8 +30,11 @@
   <img  width="92%" style="border-radius:10px;margin-top:20px;margin-bottom:20px;box-shadow: 2px 0 6px gray;" src="https://images.gitee.com/uploads/images/2020/1019/104805_042b888c_4835367.png" />
 </div>
 
-#### 项目简介
->Pear Admin Think 基于 thinkphp6 的快速开发平台，通过简单的代码生成功能，即可快速构建你的功能业务，努力成为最顺手的轮子。
+### 🌈 项目简介
+
+* 基于 Yii2 实现的通用权限管理平台（RBAC模式）。整合最新技术高效快速开发，前后端分离模式，开箱即用。
+* 核心模块包括：用户、角色、权限、路由、部门、菜单、文件管理、系统配置等功能。
+* 代码量少、学习简单、功能强大、轻量级、易扩展，轻松开发从现在开始！
 
 #### V5.0.1
 * 增加图库选择功能。
@@ -55,7 +58,61 @@
 * 模型，服务，验证器，事件，工具包 统一放入common文件进行管理。
 * 修改设计思路，移动目录结构，简化代码。
 * 本次更新，变动较大。请使用最新版本！
+### 🔨 项目结构
 
+```
+Pear Admin Pro
+│
+├─annex SQL 脚本
+│
+├─src 公共模块
+│  │
+│  └─main 
+│      │
+│      ├─java 源码文件
+│      │   │
+│      │   ├─common 公共代码
+│      │   │   │
+│      │   │   ├─aop 切面逻辑
+│      │   │   │
+│      │   │   ├─cache 缓存服务
+│      │   │   │
+│      │   │   ├─configure 集成配置
+│      │   │   │
+│      │   │   ├─constant 静态常量
+│      │   │   │
+│      │   │   ├─context 核心服务
+│      │   │   │
+│      │   │   ├─quartz 定时任务
+│      │   │   │
+│      │   │   ├─secure 安全实现
+│      │   │   │
+│      │   │   ├─tools 工具包
+│      │   │   │
+│      │   │   └─web 核心封装
+│      │   │   
+│      │   ├─modules 业务代码
+│      │   │   │
+│      │   │   ├─job 定时任务
+│      │   │   │      │
+│      │   │   │      ├─domain 实体
+│      │   │   │      │
+│      │   │   │      ├─params 参数
+│      │   │   │      │
+│      │   │   │      ├─repository ORM 操作
+│      │   │   │      │
+│      │   │   │      ├─rest 接口
+│      │   │   │      │
+│      │   │   │      └─service 服务
+│      │   │   │        
+│      │   │   │
+│      │   │   └─sys 基础功能
+│      │   │   
+│      │   └─EntranceApplication 启动类
+│      │   
+│      └─resource 资源文件
+│  
+└─pom.xml  Maven 配置
 #### 安装配置
 * git clone https://gitee.com/pear-admin/Pear-Admin-Think
 * 更新包composer update(可以忽略)
