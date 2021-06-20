@@ -37,7 +37,6 @@
 
 Pear Admin Yii2是基于Yii2实现的通用企业管理平台，采用经典的RBAC权限管理模式。是一款轻量级、易上手、开发简单的开发平台。
 
-
 ### 📜 项目结构
 
 ```
@@ -86,17 +85,20 @@ paer_admin_yii2.sql     数据库文件
 ```
 
 #### 🔧 安装配置
+
 * git clone https://gitee.com/imbee/pear-admin-yii2.git
 * 更新包composer update(可以忽略)
 * 将网站入口部署至backend/web/目录下面
 
 #### ⚡ 启动GatewayWorker
+
 >Windows
 * 第一步 cd vendor/GatewayWorker
 * 第二步 start_for_win.bat
 >Linux
 * 第一步 cd vendor/GatewayWorker
 * 第二步 php start.php start -d
+
 #### 🎨 预览项目
 
 |  |  |
