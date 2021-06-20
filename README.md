@@ -113,6 +113,8 @@ Pear Admin Pro
 │      └─resource 资源文件
 │  
 └─pom.xml  Maven 配置
+```
+
 #### 安装配置
 * git clone https://gitee.com/pear-admin/Pear-Admin-Think
 * 更新包composer update(可以忽略)
