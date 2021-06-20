@@ -129,12 +129,12 @@ yii2_cms.sql            数据库文件
 
 |  |  |
 |---------------------|---------------------|
-| ![](/backend/web/plugins/admin/images/demos/1.png)  |![](readme/2.jpg)  |
-| ![](readme/3.jpg)|  ![](readme/4.jpg)   |
-| ![](readme/5.jpg)|  ![](readme/6.jpg)  |
-| ![](readme/7.jpg)|  ![](readme/8.jpg)   |
-| ![](readme/9.jpg)|  ![](readme/10.jpg)  |
-|![](readme/11.jpg)| ![](readme/12.jpg)   |
+| ![](/backend/web/plugins/admin/images/demos/1.png)  |![](/backend/web/plugins/admin/images/demos/1.png)  |
+| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)   |
+| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)  |
+| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)   |
+| ![](/backend/web/plugins/admin/images/demos/1.png)|  ![](/backend/web/plugins/admin/images/demos/1.png)  |
+|![](/backend/web/plugins/admin/images/demos/1.png)| ![](/backend/web/plugins/admin/images/demos/1.png)   |
 
 #### 项目声明
 >仅供技术研究使用，请勿用于非法用途，否则产生的后果作者概不负责。
