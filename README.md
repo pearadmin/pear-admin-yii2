@@ -2,7 +2,7 @@
 <div align="center">
 <br/>
 <br/>
-<img src="/plugins/admin/images/logo.png" width="90px" style="margin-top:30px;"/>
+<img src="/backend/web/plugins/admin/images/logo.png" width="90px" style="margin-top:30px;"/>
    <h1 align="center">
     Pear Admin Yii2
    </h1>
