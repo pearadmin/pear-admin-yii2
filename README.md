@@ -82,6 +82,7 @@ frontend
     widgets             插件
 vendor                  composer安装文件
 paer_admin_yii2.sql     数据库文件
+
 ```
 
 #### 🔧 安装配置
