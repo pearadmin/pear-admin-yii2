@@ -3,12 +3,12 @@
 <br/>
 <br/>
 <img src="/backend/web/plugins/admin/images/logo.png" width="90px" style="margin-top:30px;"/>
-   <h1 align="center">
-    Pear Admin Yii2
-   </h1>
-    <h4 align="center">
-    基于 Yii2 + Pear Admin Layui 实现的快速开发平台
-  </h4> 
+<h1 align="center">
+Pear Admin Yii2
+</h1>
+<h4 align="center">
+基于 Yii2 + Pear Admin Layui 实现的快速开发平台
+</h4> 
 
   [预 览](http://pear.tsaihoo.com/)   |   [官 网](http://www.pearadmin.com/)   |   [群聊](https://jq.qq.com/?_wv=1027&k=5OdSmve)   |   [社区](http://forum.pearadmin.com/)
 
@@ -35,7 +35,7 @@
 
 ### 🏄 项目简介
 
-Pear Admin Yii2是基于Yii2实现的通用企业管理平台，采用经典的RBAC权限管理模式。是一款轻量级、易上手、开发简单的开发平台。
+Pear Admin Yii2是基于 Yii2 + Pear Admin Layui 实现的企业级高效开发平台，采用经典的RBAC权限管理模式。是一款轻量级、易上手、开发速度快的开发平台。
 
 ### 📜 项目结构
 
@@ -90,6 +90,7 @@ paer_admin_yii2.sql     数据库文件
 * git clone https://gitee.com/imbee/pear-admin-yii2.git
 * 更新包composer update(可以忽略)
 * 将网站入口部署至backend/web/目录下面
+* 数据库配置路径：common/config/main-local.php
 
 ### ⚡ 启动GatewayWorker
 
@@ -108,5 +109,6 @@ paer_admin_yii2.sql     数据库文件
 | ![](/backend/web/plugins/admin/images/demos/3.png)|  ![](/backend/web/plugins/admin/images/demos/4.png)   |
 | ![](/backend/web/plugins/admin/images/demos/5.png)|  ![](/backend/web/plugins/admin/images/demos/6.png)  |
 | ![](/backend/web/plugins/admin/images/demos/7.png)|  ![](/backend/web/plugins/admin/images/demos/8.png)   |
+| ![](/backend/web/plugins/admin/images/demos/9.png)|  ![](/backend/web/plugins/admin/images/demos/10.png)   |
 
 
