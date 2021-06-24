@@ -32,7 +32,7 @@ $this->registerJs($this->render('js/perms-list.js'));
                 <tr>
                     <th lay-data="{field:'_name',width:'20%', sort: true,hide:true}">权限名称</th>
                     <th lay-data="{field:'name', width:'20%', sort: true,edit:'text'}">权限名称</th>
-                    <th lay-data="{field:'description', width:'20%', sort: true,edit:'text'}">权限描述</th>
+                    <th lay-data="{field:'description', width:'20%', sort: true,edit:'text',style:'background-color: #f8f8f8;' }">权限描述</th>
                     <th lay-data="{field:'created_at', width:'20%', sort: true}">创建时间</th>
                     <th lay-data="{field:'updated_at', width:'20%', sort: true}">更新时间</th>
                     <th lay-data="{fixed: 'right',width:'20%' ,title:'操作', align: 'center',toolbar: '#barDemo_hash'}">积分</th>
