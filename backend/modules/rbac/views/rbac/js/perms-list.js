@@ -9,7 +9,7 @@ layui.use(['table','layer','form','ajax'], function(){
         layer.confirm("是否确认修改?",{
             btn1:function () {
                 ajax.post('/rbac/rbac/update-item',obj.data,function (d) {
-                    layer.msg(d.msg,{icon:d.code == 0?1:7});
+                    layer.msg(d.msg,{icon:d.code == 200?1:7});
                 })
             }
             ,btn2:function () {
