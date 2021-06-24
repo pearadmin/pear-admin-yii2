@@ -116,7 +116,7 @@ layui.config({
             layer.open({
                 type : 2,
                 area : ['100%' , '100%'],
-                title : "权限修改1",
+                title : "权限修改:"+obj.data.username,
                 content : ['/rbac/user/user-update?id='+obj.data.id,'no'],
                 success : function(layero, index){
                     setTimeout(function(){
