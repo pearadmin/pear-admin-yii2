@@ -62,10 +62,10 @@ layui.use(['table','layer','form','jquery','treetable','treeSelect','ajax'], fun
                     icon: 3,
                     title: '提示'
                 },function () {
-                    if(d.code == 0){
+                    if(d.code == 200){
                         obj.del();
                         layer.msg(d.msg,{icon:1,time:1000})
-                    }else if(d.code == 1){
+                    }else {
                         layer.msg(d.msg,{icon:2,time:1000})
                     }
                 })
