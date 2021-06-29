@@ -20,7 +20,7 @@ layui.use(['table','layer','form'], function(){
             $.post($this.attr('href'), {children: items,index:target=='available'?0:1,parent:_parent}, function (r) {
                 r = JSON.parse(r);
                 layer.close(index);
-                if(r.code == 0){
+                if(r.code == 200){
                     updateItems(r.data);
                 }else{
                     layer.msg(r.msg);
