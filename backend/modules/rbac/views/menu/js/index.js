@@ -79,7 +79,7 @@ layui.use(['table','layer','form','jquery','treetable'], function(){
                     type: "Post",
                     dataType: "json",
                     success: function (res) {
-                        if(res.code==0){
+                        if(res.code==200){
                             layer.close(layer.index)
                             layer.msg(res.msg,{icon:1,time:1500});
                             layer.close();
