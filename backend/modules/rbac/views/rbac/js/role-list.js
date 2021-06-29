@@ -8,7 +8,6 @@ layui.use(['table','layer','form','ajax'], function(){
     table.on('edit(main-table)', function(obj){
         layer.confirm("是否确认修改?",{
             btn1:function () {
-                //ajax('/rbac/rbac/update-item',obj.data);
                 ajax.post('/rbac/rbac/update-item',obj.data,function (d) {
                     if(d.code == 0){
                         layer.msg(d.msg,{icon:1});
@@ -48,7 +47,7 @@ layui.use(['table','layer','form','ajax'], function(){
                 btn1:function () {
                     obj.data['otype'] = "1";
                     ajax.post('/rbac/rbac/update-role',{name:obj.data.name,description:obj.data.description,otype:obj.data.otype},function (d) {
-                        if(d.code==0){
+                        if(d.code == 200){
                             layer.msg(d.msg,{icon:1,time:1500});
                         }else{
                             layer.msg(d.msg, {icon: 5,time:1000});
@@ -88,7 +87,7 @@ layui.use(['table','layer','form','ajax'], function(){
     form.on('submit(add)', function(data){
         data.field['otype'] = "0";
         ajax.post('/rbac/rbac/update-role', data.field,function (d) {
-            if(d.code==0){
+            if(d.code==200){
                 layer.close(layer.index)
                 layer.msg(d.msg,{icon:1,time:1500});
                 table.reload('main-table', {
