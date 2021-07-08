@@ -22,13 +22,11 @@ if (in_array(Yii::$app->controller->id . '/' . Yii::$app->controller->action->id
     ];
     if(in_array(Yii::$app->controller->id . '/' . Yii::$app->controller->action->id, $bootstrp_list)){
         PearAsset::register($this);
-    }else{
-        //加载bootstrp资源
-        PearAsset::register($this);
-        //AppAsset::register($this);
     }
+
     echo $this->render(
         'main-index',
         ['content' => $content]
     );
 }
+?>
