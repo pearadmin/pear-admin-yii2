@@ -23,3 +23,6 @@ use yii\helpers\Html;
     <?php $this->endBody() ?>
     </html>
 <?php $this->endPage() ?>
+<script>
+    console.log('main-login');
+</script>
