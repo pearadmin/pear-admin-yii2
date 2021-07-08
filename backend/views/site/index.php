@@ -61,11 +61,13 @@
 <!-- 依 赖 脚 本 -->
 <!-- 框 架 初 始 化 -->
 <script>
-    layui.use(['admin','jquery','convert','popup'], function() {
+    layui.use(['admin','jquery','convert','popup','gatewayWorker'], function() {
         var admin = layui.admin;
         var $ = layui.jquery;
         var convert = layui.convert;
         var popup = layui.popup;
+        var gatewayWorker = layui.gatewayWorker;
+        gatewayWorker.WebSocket("ws://<?php echo Yii::$app->params['gatewayWorkerUrl']; ?>:8282",{"Uid":<?php echo Yii::$app->user->identity->id; ?>});
 
         // 初始化顶部用户信息
         admin.setAvatar("plugins/admin/images/avatar.jpg","就眠仪式");
