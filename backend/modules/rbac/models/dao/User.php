@@ -44,7 +44,7 @@ class User extends UserModel
         }
 
         $r['count'] = $q->count();
-        $r['data'] = $q->orderBy(['id'=>SORT_DESC])->all();
+        $r['data'] = $q->orderBy(['id'=>SORT_ASC])->all();
         return $r;
     }
 
