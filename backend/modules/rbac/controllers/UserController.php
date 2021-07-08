@@ -69,7 +69,7 @@ class UserController extends Controller
 
             try{
                 require_once Yii::getAlias('@vendor').'/GatewayWorker/vendor/autoload.php';
-                $gateway = new Gateway('websocket://127.0.0.1:8282');
+                $gateway = new Gateway('websocket://'.Yii::$app->params['gatewayWorkerUrl'].':8282');
 
                 foreach ($data['data'] as $key => $v){
                     $data['data'][$key]['is_online'] = $gateway->isUidOnline($v['id']);
@@ -82,6 +82,7 @@ class UserController extends Controller
 
         return $this->render('user-list');
     }
+
 
     /**
      * 浏览器跳转'user/user-list'视图
