@@ -189,7 +189,7 @@ class MenuController extends Controller
         $r['logo']['title'] = $data['logo_title'];
         $r['menu']['control'] = $data['menu_control'] == 1?true:false;       // 是否开启多系统菜单模式
         $r['menu']['accordion'] = $data['menu_accordion'] == 1?true:false;     // 是否同时只打开一个菜单目录
-        $r['menu']['select'] = 1;
+        $r['menu']['select'] = 36;
         $r['menu']['async'] = true;
 
         $r['tab']['muiltTab'] = $data['muilt_tab'] == 1?true:false;
