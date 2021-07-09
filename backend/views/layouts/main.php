@@ -22,6 +22,8 @@ if (in_array(Yii::$app->controller->id . '/' . Yii::$app->controller->action->id
     ];
     if(in_array(Yii::$app->controller->id . '/' . Yii::$app->controller->action->id, $bootstrp_list)){
         PearAsset::register($this);
+    }else{
+        PearAsset::register($this);
     }
 
     echo $this->render(
