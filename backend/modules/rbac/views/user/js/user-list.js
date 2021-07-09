@@ -31,7 +31,7 @@ layui.config({
                         return '<span style="color: rgb(255,73,87)">禁用</span>';
                     }
                 }}
-                ,{field: 'is_online',align:'center', title: '是否在线',templet:function (d) {
+                /*,{field: 'is_online',align:'center', title: '是否在线',templet:function (d) {
                     if(d.is_online == 1){
                         return '<div class="is_online" style="background:#5FB878"></div>';
                     }else if(d.is_online == 0){
@@ -39,8 +39,9 @@ layui.config({
                     }else{
                         return '<div class="is_online" style="background: red;"></div>';
                     }
-                }}
+                }}*/
                 ,{field: 'dept_name', title: '部门'}
+                ,{field: 'created_at', title: '创建时间'}
                 ,{
                     fixed: 'right',
                     width:220,
