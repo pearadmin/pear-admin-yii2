@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 $js ='var user_id = '. Yii::$app->user->id.';';
 $this->registerJs($js);
-$this->registerJs($this->render('js/gateway_worker.js'));
+
 ?>
 
 <?php $this->beginPage() ?>
@@ -10,7 +10,7 @@ $this->registerJs($this->render('js/gateway_worker.js'));
     <html>
     <head>
         <meta charset="utf-8">
-        <title>后台管理</title>
+        <title>PEAR ADMIN YII2</title>
         <meta name="renderer" content="webkit">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
