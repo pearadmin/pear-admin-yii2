@@ -67,7 +67,8 @@ class UserController extends Controller
             $model = new User();
             $data = $model->search(['id','username','nickname','created_at','updated_at','status','dept_id'],$p);
 
-            try{
+            // 获取用户在线状态
+            /*try{
                 require_once Yii::getAlias('@vendor').'/GatewayWorker/vendor/autoload.php';
                 $gateway = new Gateway('websocket://'.Yii::$app->params['gatewayWorkerUrl'].':8282');
 
@@ -75,7 +76,7 @@ class UserController extends Controller
                     $data['data'][$key]['is_online'] = $gateway->isUidOnline($v['id']);
                 }
             }catch (ErrorException $e){
-            }
+            }*/
 
             return json_encode(['code' => 0, 'count' => $data['count'], 'msg' => '', 'data' => $data['data']]);
         }
