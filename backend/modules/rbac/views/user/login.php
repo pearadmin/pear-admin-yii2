@@ -14,7 +14,7 @@ $this->registerCss($css);
 <body background="/plugins/admin/images/background2.svg" style="background-size: cover;">
     <?php $form = ActiveForm::begin(['id' => 'login-form','options'=>['class' => 'layui-form']]); ?>
     <div class="layui-form-item">
-        <img class="logo" src="/plugins/admin/images/logo_bak.png" />
+        <img class="logo" src="/plugins/admin/images/logo.png" />
         <div class="title">Pear Admin</div>
         <div class="desc">
             明 湖 区 最 具 影 响 力 的 设 计 规 范 之 一
