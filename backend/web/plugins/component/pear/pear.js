@@ -46,7 +46,7 @@ layui.config({
 	http: "http",			// ajax请求组件
 	theme: "theme",			// 主题转换
 	ajax: "ajax",			// ajax请求组件
-	gatewayWorker: "gatewayWorker"			// ajax请求组件
+	gatewayWorker: "gatewayWorker"	// gatewayWorker组件
 }).use(['layer', 'theme'], function () {
 	layui.theme.changeTheme(window, false);
 });
