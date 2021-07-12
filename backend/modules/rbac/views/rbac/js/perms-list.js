@@ -44,7 +44,7 @@ layui.use(['table','layer','form','ajax'], function(){
             layer.confirm("是否确认删除?",{
                 btn1:function () {
                     ajax.post('/rbac/rbac/update-permissions',{perms:[{value:obj.data.name}],oType:1},function (d) {
-                        layer.msg(d.msg,{icon:d.code == 0?1:7});
+                        layer.msg(d.msg,{icon:d.code == 200?1:7});
                         obj.del();
                     })
                 }
@@ -83,7 +83,7 @@ layui.use(['table','layer','form','ajax'], function(){
             type: "Post",
             dataType: "json",
             success: function (res) {
-                if(res.code==0){
+                if(res.code==200){
                     layer.close(layer.index)
                     layer.msg(res.msg,{icon:1,time:1500});
                     table.reload('main-table', {
