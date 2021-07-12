@@ -1,7 +1,7 @@
 <?php
 $this->registerJs($this->render('js/perms-list.js'));
 ?>
-<body class="pear-container">
+<body class="pear-container" style="overflow: hidden">
     <div class="layui-card" >
         <div class="layui-card-body">
             <form class="layui-form" action="">
@@ -27,7 +27,7 @@ $this->registerJs($this->render('js/perms-list.js'));
     </div>
     <div class="layui-card" >
         <div class="layui-card-body">
-            <table class="layui-table" lay-data="{url:'/rbac/rbac/get-perms-list',page: true,skin:'line',limit: 10, id:'main-table',method:'post'}" lay-filter="main-table" id ='id'>
+            <table class="layui-table"  lay-data="{url:'/rbac/rbac/get-perms-list',page: true,height: 'full-150',skin:'line',limit: 10, id:'main-table',method:'post'}" lay-filter="main-table" id ='id'>
                 <thead>
                 <tr>
                     <th lay-data="{field:'_name',width:'20%', sort: true,hide:true}">权限名称</th>
