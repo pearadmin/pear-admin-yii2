@@ -92,15 +92,6 @@ paer_admin_yii2.sql     数据库文件
 * 将网站入口部署至backend/web/目录下面
 * 数据库配置路径：common/config/main-local.php
 
-### ⚡ 启动GatewayWorker
-
->Windows
-* 第一步 cd vendor/GatewayWorker
-* 第二步 start_for_win.bat
->Linux
-* 第一步 cd vendor/GatewayWorker
-* 第二步 php start.php start -d
-
 ### 🎨 预览项目
 
 |  |  |
