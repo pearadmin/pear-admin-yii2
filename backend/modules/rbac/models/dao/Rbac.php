@@ -57,7 +57,7 @@ class Rbac extends ActiveRecord
             $query->andWhere(['like','name',$params['perm_name']]);
         }
         $count = $query->count();
-        $data =  $query->all();
+        $data =  $query->orderBy(['description'=>SORT_ASC])->all();
         return json_encode(['code'=>0,'msg'=>'','count'=>$count,"data"=>$data]);
     }
 
@@ -254,7 +254,7 @@ class Rbac extends ActiveRecord
             if($r){
                 return json_encode(['code'=>200,'msg'=>'SUCCESS']);
             }else{
-                return json_encode(['code'=>400   ,'msg'=>'FAILED']);
+                return json_encode(['code'=>400,'msg'=>'FAILED']);
             }
         }catch (\Exception $e){
             return json_encode(['code'=>400,'msg'=>$e->getMessage()]);
