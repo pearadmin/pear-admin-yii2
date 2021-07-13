@@ -10,6 +10,11 @@ layui.use(['table','layer','form','ajax'], function(){
             btn1:function () {
                 ajax.post('/rbac/rbac/update-item',obj.data,function (d) {
                     layer.msg(d.msg,{icon:d.code == 200?1:7});
+                    table.reload('main-table', {
+                        page: {
+                            curr: 1
+                        }
+                    });
                 })
             }
             ,btn2:function () {
