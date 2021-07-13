@@ -2,6 +2,8 @@
 use yii\helpers\Html;
 $js ='var user_id = '. Yii::$app->user->id.';';
 $this->registerJs($js);
+$this->registerJs($this->render('js/main-index.js'));
+
 ?>
 
 <?php $this->beginPage() ?>
