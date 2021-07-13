@@ -9,8 +9,15 @@ layui.use(['table','layer','form','ajax'], function(){
         layer.confirm("是否确认修改?",{
             btn1:function () {
                 ajax.post('/rbac/rbac/update-item',obj.data,function (d) {
-                    if(d.code == 0){
+                    if(d.code == 200){
                         layer.msg(d.msg,{icon:1});
+                        table.reload('main-table', {
+                            page: {
+                                curr: 1
+                            }
+                        })
+                    }else{
+                        layer.msg(d.msg,{icon:7});
                     }
                 })
             }
