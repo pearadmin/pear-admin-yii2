@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2021-06-20 21:44:08
+Date: 2021-07-19 20:47:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,7 +42,7 @@ CREATE TABLE `yp_user` (
 -- ----------------------------
 -- Records of yp_user
 -- ----------------------------
-INSERT INTO `yp_user` VALUES ('1', 'tangsan', '唐三', '', '$2y$13$wf63BXPyUzwXtmhK.pIF9.HOSkRlTlbytkTO.0imGu8QrjCSn5Evu', null, '2', '', '10', '0', '1620833707', null, null);
+INSERT INTO `yp_user` VALUES ('1', 'tangsan', '唐三', '', '$2y$13$wf63BXPyUzwXtmhK.pIF9.HOSkRlTlbytkTO.0imGu8QrjCSn5Evu', null, '2', '', '10', '0', '1626182987', null, null);
 INSERT INTO `yp_user` VALUES ('2', 'xiaowu', '小舞', null, '$2y$13$wf63BXPyUzwXtmhK.pIF9.HOSkRlTlbytkTO.0imGu8QrjCSn5Evu', null, '3', null, '10', '1615995639', '1620833713', null, null);
 INSERT INTO `yp_user` VALUES ('3', 'daimubai', '戴沐白', null, '$2y$13$MP/bbW5TgnTfO6DED1IkGu9dD5Xv.P6Eq1X7PDuJ2jb.0X20d7oOe', null, '4', null, '10', '1615995749', '1620833719', null, null);
 INSERT INTO `yp_user` VALUES ('4', 'aosika', '奥斯卡', null, '$2y$13$wf63BXPyUzwXtmhK.pIF9.HOSkRlTlbytkTO.0imGu8QrjCSn5Evu', null, '7', null, '10', '1615995767', '1620833726', null, null);
@@ -54,7 +54,7 @@ INSERT INTO `yp_user` VALUES ('26', 'guimei', '鬼魅', null, '$2y$13$80cNT49XEz
 INSERT INTO `yp_user` VALUES ('27', 'huliena', '胡列娜', null, '$2y$13$p8AAL/imutwSyTc/cEAI9ObnEDewqChAkMdfy4D365E8vaKeuLvda', null, '1', null, '10', '1620744363', '1620744363', null, null);
 INSERT INTO `yp_user` VALUES ('28', 'qianrenxue', '千仞雪', null, '$2y$13$zkiitsCArpkLLCrZ00Arwu3xG3tVpAsZvCTFVIbE6Hqn3P8.nNuQm', null, '1', null, '10', '1620744375', '1620744375', null, null);
 INSERT INTO `yp_user` VALUES ('29', 'qiandaoliu', '千道流', null, '$2y$13$ZD2tml3KWYpbSrPrbvU2xOGzEKDlCSV5KUec.TLRFnGuD7bDDfwlC', null, '1', null, '10', '1620744394', '1620744394', null, null);
-INSERT INTO `yp_user` VALUES ('30', 'earnest', 'earnest', null, '$2y$13$xFwm7cmjqUAiuHbgjnBEj.XQswelo4zS4nV/wZYweHvVyaDXpdbvS', null, '1', null, '10', '1623510548', '1623510565', null, null);
+INSERT INTO `yp_user` VALUES ('30', 'earnest', 'earnest', null, '$2y$13$xFwm7cmjqUAiuHbgjnBEj.XQswelo4zS4nV/wZYweHvVyaDXpdbvS', null, '1', null, '10', '1623510548', '1624551777', null, null);
 
 -- ----------------------------
 -- Table structure for yp_system
@@ -155,12 +155,12 @@ CREATE TABLE `yp_menu` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `parent` (`parent`) USING BTREE,
   CONSTRAINT `yp_menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `yp_menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of yp_menu
 -- ----------------------------
-INSERT INTO `yp_menu` VALUES ('2', '权限管理', null, '', '1', 'layui-icon layui-icon-vercode');
+INSERT INTO `yp_menu` VALUES ('2', '权限管理', null, '', '2', 'layui-icon layui-icon-vercode');
 INSERT INTO `yp_menu` VALUES ('26', '菜单管理', '2', '/rbac/menu/index', '6', '');
 INSERT INTO `yp_menu` VALUES ('27', '路由配制', '2', '/rbac/rbac/routes', '4', '');
 INSERT INTO `yp_menu` VALUES ('28', '用户管理', '2', '/rbac/user/user-list', '1', '');
@@ -170,6 +170,8 @@ INSERT INTO `yp_menu` VALUES ('31', '部门管理', '2', '/rbac/dept/index', '5'
 INSERT INTO `yp_menu` VALUES ('32', '系统管理', null, '', '2', 'layui-icon layui-icon-set');
 INSERT INTO `yp_menu` VALUES ('33', '文件管理', '32', '/rbac/system/index', '1', '');
 INSERT INTO `yp_menu` VALUES ('34', '系统设置', '32', '/rbac/system/sys-set', '2', '');
+INSERT INTO `yp_menu` VALUES ('35', '工作空间', null, '', '1', 'layui-icon layui-icon-console');
+INSERT INTO `yp_menu` VALUES ('36', '控制后台', '35', '/site/content', '1', '');
 
 -- ----------------------------
 -- Table structure for yp_dept
@@ -181,7 +183,7 @@ CREATE TABLE `yp_dept` (
   `parent` tinyint(1) DEFAULT '0',
   `order` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of yp_dept
@@ -248,24 +250,32 @@ CREATE TABLE `yp_auth_item_child` (
 -- Records of yp_auth_item_child
 -- ----------------------------
 INSERT INTO `yp_auth_item_child` VALUES ('超级管理员', '/*');
-INSERT INTO `yp_auth_item_child` VALUES ('人员管理', '/menu/*');
-INSERT INTO `yp_auth_item_child` VALUES ('人员管理', '/rbac/dept/get-depts');
-INSERT INTO `yp_auth_item_child` VALUES ('人员管理', '/rbac/dept/get-slt-depts');
+INSERT INTO `yp_auth_item_child` VALUES ('菜单管理', '/menu/*');
+INSERT INTO `yp_auth_item_child` VALUES ('用户管理', '/rbac/dept/get-depts');
+INSERT INTO `yp_auth_item_child` VALUES ('菜单管理', '/rbac/dept/get-depts');
+INSERT INTO `yp_auth_item_child` VALUES ('用户管理', '/rbac/dept/get-slt-depts');
+INSERT INTO `yp_auth_item_child` VALUES ('菜单管理', '/rbac/dept/get-slt-depts');
+INSERT INTO `yp_auth_item_child` VALUES ('部门管理', '/rbac/dept/get-table-depts');
+INSERT INTO `yp_auth_item_child` VALUES ('部门管理', '/rbac/dept/index');
+INSERT INTO `yp_auth_item_child` VALUES ('部门管理', '/rbac/dept/update');
+INSERT INTO `yp_auth_item_child` VALUES ('菜单管理', '/rbac/menu/get-menu-list');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/rbac/menu/get-menus');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/compressed-file');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/create');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/del');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/download');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/get-folder-size');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/get-links');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/index');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/remove');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/rename');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/sys-set');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/update-perms');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/rbac/system/upload');
+INSERT INTO `yp_auth_item_child` VALUES ('菜单管理', '/rbac/menu/index');
+INSERT INTO `yp_auth_item_child` VALUES ('菜单管理', '/rbac/menu/update');
+INSERT INTO `yp_auth_item_child` VALUES ('权限分配', '/rbac/rbac/get-perms-list');
+INSERT INTO `yp_auth_item_child` VALUES ('角色列表', '/rbac/rbac/get-role-list');
+INSERT INTO `yp_auth_item_child` VALUES ('角色列表', '/rbac/rbac/item-update');
+INSERT INTO `yp_auth_item_child` VALUES ('权限分配', '/rbac/rbac/perms-list');
+INSERT INTO `yp_auth_item_child` VALUES ('角色列表', '/rbac/rbac/role-list');
+INSERT INTO `yp_auth_item_child` VALUES ('路由分配', '/rbac/rbac/routes');
+INSERT INTO `yp_auth_item_child` VALUES ('系统设置', '/rbac/system/get-links');
+INSERT INTO `yp_auth_item_child` VALUES ('文件管理', '/rbac/system/getdirs');
+INSERT INTO `yp_auth_item_child` VALUES ('文件管理', '/rbac/system/index');
+INSERT INTO `yp_auth_item_child` VALUES ('系统设置', '/rbac/system/sys-set');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/rbac/user/logout');
-INSERT INTO `yp_auth_item_child` VALUES ('人员管理', '/rbac/user/user-list');
+INSERT INTO `yp_auth_item_child` VALUES ('用户管理', '/rbac/user/user-list');
+INSERT INTO `yp_auth_item_child` VALUES ('菜单管理', '/rbac/user/user-list');
+INSERT INTO `yp_auth_item_child` VALUES ('用户管理', '/rbac/user/user-update');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/site/content');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/site/error403');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/site/error404');
@@ -273,11 +283,9 @@ INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/site/error500');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/site/index');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/site/login');
 INSERT INTO `yp_auth_item_child` VALUES ('基础权限', '/site/logout');
-INSERT INTO `yp_auth_item_child` VALUES ('系统管理', '/system/*');
-INSERT INTO `yp_auth_item_child` VALUES ('管理员', '人员管理');
-INSERT INTO `yp_auth_item_child` VALUES ('人员管理', '基础权限');
-INSERT INTO `yp_auth_item_child` VALUES ('管理员', '基础权限');
-INSERT INTO `yp_auth_item_child` VALUES ('管理员', '系统管理');
+INSERT INTO `yp_auth_item_child` VALUES ('普通用户', '基础权限');
+INSERT INTO `yp_auth_item_child` VALUES ('普通用户', '文件管理');
+INSERT INTO `yp_auth_item_child` VALUES ('普通用户', '菜单管理');
 
 -- ----------------------------
 -- Table structure for yp_auth_item
@@ -353,7 +361,8 @@ INSERT INTO `yp_auth_item` VALUES ('/rbac/user/delete-all', '2', '/rbac/user/del
 INSERT INTO `yp_auth_item` VALUES ('/rbac/user/insert', '2', '/rbac/user/insert', null, null, '1623341677', '1623341677');
 INSERT INTO `yp_auth_item` VALUES ('/rbac/user/login', '2', '/rbac/user/login', null, null, '1623341677', '1623341677');
 INSERT INTO `yp_auth_item` VALUES ('/rbac/user/logout', '2', '/rbac/user/logout', null, null, '1623341677', '1623341677');
-INSERT INTO `yp_auth_item` VALUES ('/rbac/user/update', '2', '/rbac/user/update', null, null, '1623341677', '1623341677');
+INSERT INTO `yp_auth_item` VALUES ('/rbac/user/person', '2', '/rbac/user/person', null, null, '1624551758', '1624551758');
+INSERT INTO `yp_auth_item` VALUES ('/rbac/user/update', '2', '/rbac/user/update', null, null, '1626102060', '1626102060');
 INSERT INTO `yp_auth_item` VALUES ('/rbac/user/update-user-child', '2', '/rbac/user/update-user-child', null, null, '1623341677', '1623341677');
 INSERT INTO `yp_auth_item` VALUES ('/rbac/user/user-list', '2', '/rbac/user/user-list', null, null, '1623341677', '1623341677');
 INSERT INTO `yp_auth_item` VALUES ('/rbac/user/user-update', '2', '/rbac/user/user-update', null, null, '1623341677', '1623341677');
@@ -371,14 +380,18 @@ INSERT INTO `yp_auth_item` VALUES ('/system/*', '2', '/system/*', null, null, '1
 INSERT INTO `yp_auth_item` VALUES ('/tools/*', '2', '/tools/*', null, null, '1623341677', '1623341677');
 INSERT INTO `yp_auth_item` VALUES ('/tools/icon', '2', '/tools/icon', null, null, '1623341677', '1623341677');
 INSERT INTO `yp_auth_item` VALUES ('/user/*', '2', '/user/*', null, null, '1623341677', '1623341677');
-INSERT INTO `yp_auth_item` VALUES ('人员管理', '2', '菜单名：人员管理', null, null, '1623424286', '1623513265');
-INSERT INTO `yp_auth_item` VALUES ('基础权限', '2', '默认权限，不可删除或修改', null, null, '1623344661', '1623514568');
-INSERT INTO `yp_auth_item` VALUES ('操作员', '1', 'operator', null, null, '1623155818', '1623155818');
-INSERT INTO `yp_auth_item` VALUES ('权限管理', '2', '权限管理', null, null, '1611674427', '1623424266');
-INSERT INTO `yp_auth_item` VALUES ('游客', '1', 'guest', null, null, '1623155790', '1623155790');
-INSERT INTO `yp_auth_item` VALUES ('管理员', '1', 'admin', null, null, '1623154265', '1623154265');
-INSERT INTO `yp_auth_item` VALUES ('系统管理', '2', '系统管理', null, null, '1621436683', '1623424269');
+INSERT INTO `yp_auth_item` VALUES ('基础权限', '2', '基本权限，登录、注销等，不可删除或修改', null, null, '1623344661', '1626105690');
+INSERT INTO `yp_auth_item` VALUES ('文件管理', '2', '对应菜单：文件管理', null, null, '1621436683', '1626180669');
+INSERT INTO `yp_auth_item` VALUES ('普通用户', '1', 'user', null, null, '1623154265', '1626180999');
+INSERT INTO `yp_auth_item` VALUES ('权限分配', '2', '对应菜单：权限管理', null, null, '1611674427', '1626105601');
+INSERT INTO `yp_auth_item` VALUES ('游客', '1', 'guest', null, null, '1623155790', '1626182883');
+INSERT INTO `yp_auth_item` VALUES ('用户管理', '2', '对应菜单：用户管理', null, null, '1626105281', '1626105281');
+INSERT INTO `yp_auth_item` VALUES ('系统设置', '2', '对应菜单：系统设置', null, null, '1626180693', '1626180706');
+INSERT INTO `yp_auth_item` VALUES ('菜单管理', '2', '对应菜单：用户管理', null, null, '1623424286', '1626103057');
+INSERT INTO `yp_auth_item` VALUES ('角色列表', '2', '对应菜单：角色列表', null, null, '1626105303', '1626186515');
 INSERT INTO `yp_auth_item` VALUES ('超级管理员', '1', 'superadmin', null, null, '1615991598', '1623154273');
+INSERT INTO `yp_auth_item` VALUES ('路由分配', '2', '对应菜单：路由分配', null, null, '1626105362', '1626105362');
+INSERT INTO `yp_auth_item` VALUES ('部门管理', '2', '对应菜单：部门管理', null, null, '1626105382', '1626105382');
 
 -- ----------------------------
 -- Table structure for yp_auth_assignment
@@ -396,11 +409,17 @@ CREATE TABLE `yp_auth_assignment` (
 -- ----------------------------
 -- Records of yp_auth_assignment
 -- ----------------------------
+INSERT INTO `yp_auth_assignment` VALUES ('基础权限', '2', '1626183088');
 INSERT INTO `yp_auth_assignment` VALUES ('基础权限', '29', '1623945084');
 INSERT INTO `yp_auth_assignment` VALUES ('基础权限', '30', '1623513968');
 INSERT INTO `yp_auth_assignment` VALUES ('基础权限', '36', '1623514667');
 INSERT INTO `yp_auth_assignment` VALUES ('基础权限', '37', '1623517055');
-INSERT INTO `yp_auth_assignment` VALUES ('权限管理', '1', '1616219246');
-INSERT INTO `yp_auth_assignment` VALUES ('管理员', '2', '1623254994');
-INSERT INTO `yp_auth_assignment` VALUES ('系统管理', '1', '1621436732');
+INSERT INTO `yp_auth_assignment` VALUES ('文件管理', '2', '1626186757');
+INSERT INTO `yp_auth_assignment` VALUES ('权限分配', '2', '1626186757');
+INSERT INTO `yp_auth_assignment` VALUES ('用户管理', '2', '1626186757');
+INSERT INTO `yp_auth_assignment` VALUES ('系统设置', '2', '1626186757');
+INSERT INTO `yp_auth_assignment` VALUES ('菜单管理', '2', '1626186757');
+INSERT INTO `yp_auth_assignment` VALUES ('角色列表', '2', '1626186757');
 INSERT INTO `yp_auth_assignment` VALUES ('超级管理员', '1', '1616219246');
+INSERT INTO `yp_auth_assignment` VALUES ('路由分配', '2', '1626186757');
+INSERT INTO `yp_auth_assignment` VALUES ('部门管理', '2', '1626186757');
