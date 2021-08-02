@@ -16,7 +16,7 @@
             <li class="layui-nav-item">
                 <!-- 头 像 -->
                 <a href="javascript:;">
-                    <img src="plugins/admin/images/avatar.jpag" class="layui-nav-img">
+                    <img src="plugins/admin/images/avatar.jpg" class="layui-nav-img">
                 </a>
                 <!-- 功 能 菜 单 -->
                 <dl class="layui-nav-child">
