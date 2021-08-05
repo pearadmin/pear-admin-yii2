@@ -21,7 +21,7 @@ $this->registerCss($css);
         </div>
     </div>
     <div class="layui-form-item">
-        <?= $form->field($model, 'username')->label(false)->textInput(['class'=>'layui-input','placeholder'=>'账 户:admin','value'=>'tangsan']) ?>
+        <?= $form->field($model, 'username')->label(false)->textInput(['class'=>'layui-input','placeholder'=>'账 户:admin','value'=>'xiaowu']) ?>
     </div>
     <div class="layui-form-item">
         <?= $form->field($model, 'password')->label(false)->passwordInput(['class'=>'layui-input','placeholder'=>'密 码 : admin ','value'=>'123']) ?>
