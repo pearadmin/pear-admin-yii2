@@ -15,9 +15,9 @@ $this->registerCss($css);
     <?php $form = ActiveForm::begin(['id' => 'login-form','options'=>['class' => 'layui-form']]); ?>
     <div class="layui-form-item">
         <img class="logo" src="/plugins/admin/images/logo.png" />
-        <div class="title">Pear Admin</div>
+        <div class="title">Yii2 Template</div>
         <div class="desc">
-            明 湖 区 最 具 影 响 力 的 设 计 规 范 之 一
+            相 城 区 最 具 影 响 力 的 设 计 规 范 之 一
         </div>
     </div>
     <div class="layui-form-item">
@@ -30,6 +30,9 @@ $this->registerCss($css);
         <input placeholder="验证码 : "  hover class="code layui-input layui-input-inline"  />
         <img src="/plugins/admin/images/captcha.gif" class="codeImage" />
     </div>-->
+    <div class="layui-form-item">
+        <div id="slider"></div>
+    </div>
     <div class="layui-form-item">
         <?= $form->field($model, 'rememberMe')->label(false)->checkbox(["class"=>"input",'lay-skin'=>"primary",'title'=>'30天内自动登录']) ?>
     </div>
