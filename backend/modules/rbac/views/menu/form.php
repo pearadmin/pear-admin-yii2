@@ -21,11 +21,11 @@ AppAsset::register($this);
         <input placeholder="请输入或选择图标" id="icon" type="text" name="Menu[icon]" value='<?=$model->icon?>' class="layui-input">
     </div>
 
-    <?php echo Html::button('打开图标',['class'=>'layui-btn open-icon','style'=>'margin-top: 25px;']);?>
+    <?php echo Html::button('打开图标',['class'=>'layui-btn pear-btn pear-btn-primary open-icon','style'=>'margin-top: 25px;']);?>
     <div align='right' style="margin-top:15px;">
         <?=
         Html::submitButton($model->isNewRecord ? Yii::t('backend-rbac', 'Create') : Yii::t('backend-rbac', 'Update')
-            , ['class' => $model->isNewRecord? 'layui-btn' : 'layui-btn layui-btn-normal'])
+            , ['class' => $model->isNewRecord? 'layui-btn' : 'layui-btn pear-btn pear-btn-primary layui-btn-normal'])
         ?>
     </div>
     <?php ActiveForm::end(); ?>
