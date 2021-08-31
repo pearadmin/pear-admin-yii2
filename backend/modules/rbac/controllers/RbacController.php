@@ -232,7 +232,7 @@ class RbacController extends Controller
                         $_p[]['value'] = $v;
                     }
                     Rbac::updateItems($_p,$params['index']);
-                    return $this->redirect(['/rbac/rbac/routes']);
+                    return json_encode(['code'=>200,'msg'=>'','data'=>json_decode($this->getRoutes(),true)]);
                 }else{
                     return json_encode(['code'=>400,'msg'=>'请求参数异常','data'=>[]]);
                 }
