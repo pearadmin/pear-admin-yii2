@@ -7,7 +7,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 $this->registerJs($this->render('js/login.js'));
 $this->registerCssFile(Yii::$app->request->baseUrl . '/plugins/admin/css/other/login.css',['position'=>\yii\web\View::POS_END,'depends'=>'yii\web\YiiAsset']);
-$css = '.layui-form-item{margin-top:20px !important;}
+$css = '.layui-form-item{margin-top:2vh !important;}
         .help-block-error{color: #5FB878;text-indent: 4px;padding-top: 2px;}';
 $this->registerCss($css);
 ?>
