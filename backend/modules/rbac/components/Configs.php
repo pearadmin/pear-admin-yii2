@@ -71,12 +71,12 @@ class Configs extends \yii\base\BaseObject
      */
     public $menuTable = '{{%menu}}';
 	 /**
-     * @var string Menu table name.
+     * @var string admin_log table name.
      */
     public $adminLogTable = '{{%admin_log}}';
 
     /**
-     * @var string Menu table name.
+     * @var string admin table name.
      */
     public $userTable = '{{%admin}}';
 
