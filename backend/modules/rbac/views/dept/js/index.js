@@ -131,7 +131,7 @@ layui.use(['table','layer','form','jquery','treetable','treeSelect','ajax'], fun
             let loading = layer.load();
             ajax.post('/rbac/dept/delete-all',{ids:ids},function (d) {
                 layer.close(loading);
-                if(d.code == 0){
+                if(d.code == 200){
                     window.location.reload();
                     layer.msg(d.msg,{icon:1,time:1000})
                 }else if(d.code == 1){
