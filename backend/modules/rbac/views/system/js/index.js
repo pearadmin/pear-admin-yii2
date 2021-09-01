@@ -119,7 +119,7 @@ layui.use(['table','layer','form','element','ajax','dropdown','form','upload','a
         data = $('input[name="cur_route"]').val()+$(this).attr("data-value")
         let This = $(this)
         ajax.post('/rbac/system/get-folder-size',{path:data},function (d) {
-            if(d.code == 0){
+            if(d.code == 200){
                 This.html(d.size)
                 This.removeClass('fold-count');
             }
