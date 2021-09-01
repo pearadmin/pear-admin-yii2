@@ -24,9 +24,6 @@ Pear Admin Yii2
     <a href="#">
         <img src="https://img.shields.io/badge/mysql-5.7.14+-green.svg" alt="MYSQL Version">
     </a>
-    <a href="#">
-        <img src="https://img.shields.io/badge/GatewayWorker-3.0.19-green" alt="MYSQL Version">
-    </a>
 </p>
 
 <div align="center">
