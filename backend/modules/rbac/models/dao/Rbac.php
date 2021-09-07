@@ -433,11 +433,12 @@ class Rbac extends ActiveRecord
     public static function updateRole($p){
         try {
             $auth = Yii::$app->authManager;
-            $_role = $auth->createRole($p['name']);
-            $_role->description = $p['description'];
             if($p['otype'] == 0){
+                $_role = $auth->createRole($p['name']);
+                $_role->description = $p['description'];
                 $res = $auth->add($_role);
             }else if($p['otype'] == 1){
+                $_role = $auth->getRole($p['name']);
                 $res = $auth->remove($_role);
             }
 
