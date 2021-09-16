@@ -444,9 +444,9 @@ class SystemController extends Controller
         $model->keep_load = $param['keep_load'];
         $model->index_title = $param['index_title'];
         $model->index_href = $param['index_href'];
-        $model->links_title = json_encode($param['links_title']);
-        $model->links_href = json_encode($param['links_href']);
-        $model->links_icon = json_encode($param['links_icon']);
+        $model->links_title = json_encode(isset($param['links_title'])?$param['links_title']:'');
+        $model->links_href = json_encode(isset($param['links_href'])?$param['links_href']:'');
+        $model->links_icon = json_encode(isset($param['links_icon'])?$param['links_icon']:'');
 
         if(isset($param['session']) && $param['session'] == 'on'){
             $model->session = 1;
@@ -508,10 +508,16 @@ class SystemController extends Controller
         $links_href = json_decode($model['links_href'],true);
 
         $_model = [];
-        foreach ($links_title as $key => $item){
-            $_model['links'][$key]['icon'] = $links_icon[$key];
-            $_model['links'][$key]['title'] = $links_title[$key];
-            $_model['links'][$key]['href'] = $links_href[$key];
+        if(is_array($links_title)){
+            foreach ($links_title as $key => $item){
+                $_model['links'][$key]['icon'] = $links_icon[$key];
+                $_model['links'][$key]['title'] = $links_title[$key];
+                $_model['links'][$key]['href'] = $links_href[$key];
+            }
+        }else{
+            $_model['links'][0]['icon'] = '';
+            $_model['links'][0]['title'] = '';
+            $_model['links'][0]['href'] = '';
         }
 
         $_model['logo']['image'] = $model['file_name'];
@@ -541,11 +547,18 @@ class SystemController extends Controller
         $links_href = json_decode($model['links_href'],true);
 
         $_model = [];
-        foreach ($links_title as $key => $item){
-            $_model['data'][$key]['icon'] = $links_icon[$key];
-            $_model['data'][$key]['title'] = $links_title[$key];
-            $_model['data'][$key]['href'] = $links_href[$key];
+        if(is_array($links_title)){
+            foreach ($links_title as $key => $item){
+                $_model['data'][$key]['icon'] = $links_icon[$key];
+                $_model['data'][$key]['title'] = $links_title[$key];
+                $_model['data'][$key]['href'] = $links_href[$key];
+            }
+        }else{
+            $_model['data'][0]['icon'] = '';
+            $_model['data'][0]['title'] = '';
+            $_model['data'][0]['href'] = '';
         }
+
         $param = Yii::$app->getRequest()->post();
         if(isset($param['action']) && $param['action'] == 'add'){
             return json_encode($param['data']);
