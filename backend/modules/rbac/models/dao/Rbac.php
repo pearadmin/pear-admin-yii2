@@ -483,10 +483,10 @@ class Rbac extends ActiveRecord
                 preg_match('/class ([a-zA-Z0-9]+)Controller/', $content, $match);
                 if(isset($match[1])){
                     $cName = $match[1];
-                    $_perms[] = strtolower('/'.$cName. '/*');
+                    $_perms[] = strtolower($_m.'/'.namecut($cName). '/*');
                     preg_match_all('/public function action([a-zA-Z0-9_]+)/', $content, $matches);
                     foreach ($matches[1] as $aName) {
-                        $_perms[] = strtolower($_m.'/'.$cName. '/'. namecut($aName));
+                        $_perms[] = strtolower($_m.'/'.namecut($cName). '/'. namecut($aName));
                     }
                 }
             }
