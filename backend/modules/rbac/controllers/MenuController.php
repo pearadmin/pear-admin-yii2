@@ -223,12 +223,11 @@ class MenuController extends Controller
         $links_title = json_decode($data['links_title'],true);
         $links_href = json_decode($data['links_href'],true);
         $links_icon = json_decode($data['links_icon'],true);
-        foreach ($links_title as $key => $v){
+        foreach (is_array($links_title)?$links_title:[] as $key => $v){
             $r['links'][$key]['icon'] = $links_icon[$key];
             $r['links'][$key]['title'] = $links_title[$key];
             $r['links'][$key]['href'] = $links_href[$key];
         }
-
         $r['other']['keepLoad'] = $data['keep_load'];
 
         $func = function($p){

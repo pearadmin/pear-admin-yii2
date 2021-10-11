@@ -21,7 +21,7 @@ layui.use(['table','layer','form'], function(){
                 r = JSON.parse(r);
                 layer.close(index);
                 if(r.code == 200){
-                    updateItems(r.data);
+                    updateItems(r.data.items);
                 }else{
                     layer.msg(r.msg);
                 }
