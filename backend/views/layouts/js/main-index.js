@@ -3,7 +3,6 @@ $(document).on('click', '.home-page', function() {
 });
 $.ajaxSetup({
     complete:function(XMLHttpRequest,textStatus){
-        console.log(textStatus);
         if(XMLHttpRequest.responseText == 'Forbidden (#403): 需要登录'){
              layer.confirm(this.url+':<br/>'+XMLHttpRequest.responseText,{btn:['确定','取消'],title:XMLHttpRequest.status,icon:7,id: 'LAY_layuipro'},
                  function () {
