@@ -157,7 +157,7 @@ class RbacController extends Controller
             $res = json_decode($_res,true);
             if($res['code'] == 200){
                 $r = $this->getItemChildren($params['parent']);
-                return json_encode(['code'=>200,'data'=>$r['items']]);
+                return json_encode(['code'=>200,'data'=>$r]);
             }else{
                 return $_res;
             }
