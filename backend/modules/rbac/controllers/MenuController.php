@@ -144,7 +144,7 @@ class MenuController extends Controller
             $menus['data'][$key]['powerCode'] = '';
             $menus['data'][$key]['openType'] = '';
             $menus['data'][$key]['checkArr'] = '';
-            if(count($m['parent0']) > 0){
+            if(is_array($m['parent0']) && count($m['parent0']) > 0){
                 $menus['data'][$key]['powerType'] = 1;
 
             }else{
@@ -168,7 +168,7 @@ class MenuController extends Controller
             $r[$key]['type'] = '1';
             $r[$key]['href'] = $v['route'];
 
-            if(count($v['children']) != 0){
+            if(is_array($v['children']) && count($v['children']) != 0){
                 $r[$key]['type'] = '0';
                 $r[$key]['children'] = self::getMenuChild($v['children']);
             }
@@ -233,7 +233,7 @@ class MenuController extends Controller
         $func = function($p){
             $p['title'] = $p['name'];
             $p['href'] = $p['route'];
-            if(count($p['children']) > 0){
+            if(is_array($p['children']) && count($p['children']) > 0){
                 $p['type'] = 0;
                 $p['children'] = self::getMenuChild($p['children']);
             }
