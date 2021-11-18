@@ -149,6 +149,8 @@ layui.config({
             window.batchRemove(obj);
         }else if(obj.event === 'more'){
             window.more(obj);
+        }else if(obj.event === 'export'){
+            window.export(obj);
         }
     });
 
@@ -236,7 +238,6 @@ layui.config({
             });
             return false;
         }
-
         layer.confirm('确定要删除这些用户', {
             title: '是否删除?   <span style="color:red;font-size:4px;">(确认删除请输入"确认删除")</span>',
             content:'<input type="text" data-target="confirm" class="layui-input" placeholder="确认删除">'
@@ -272,5 +273,18 @@ layui.config({
             $(this).removeClass(c);
             return _c;
         })
+    }
+
+    window.export = function (obj) {
+        layer.open({
+            type : 2,
+            area : ['50%' , '50%'],
+            title : "导出:",
+            content : ['/rbac/user/export'],
+            success : function(layero, index){
+            }
+            ,end:function () {
+            }
+        });
     }
 })
