@@ -111,6 +111,46 @@ class UserController extends Controller
     }
 
     /**
+     * 用户数据导出
+     * @return String
+     * */
+    public function actionExport(){
+        if(Yii::$app->request->isPost) {
+            $post = Yii::$app->request->post();
+
+            $model = new User();
+            $data = $model->search(['id','username','nickname','created_at','updated_at','status','dept_id'],[]);
+
+            foreach ($data['data'] as $k => $v){
+                if($v['status'] == 10){
+                    $data['data'][$k]['status'] = '启用';
+                }else{
+                    $data['data'][$k]['status'] = '禁用';
+                }
+            }
+
+            xlsWriteExcel($post['field'], $post['title'], $data['data'], '用户信息_');
+
+        }
+
+        $header = [
+            'id' => 'ID',
+            'username' => '用户名',
+            'nickname' => '昵称',
+            'created_at' => '创建时间',
+            'updated_at' => '更新时间',
+            'dept_name' => '部门名称',
+            'status' => '状态'
+        ];
+
+        return $this->render('export',[
+            'header' => $header,
+            'url'=>Yii::$app->request->get('url').'export',
+            'param'=>str_replace('"',"'",json_encode(Yii::$app->request->get()))
+        ]);
+    }
+
+    /**
      * 用户资料更新
      * @return String
      * */
