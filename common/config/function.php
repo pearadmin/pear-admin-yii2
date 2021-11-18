@@ -60,3 +60,48 @@ function namecut($s = ''){
     }
     return strtolower($fName);
 }
+
+/**
+ * xml导出
+ * @param array $field
+ * @param array $header
+ * @param array $data
+ * @param String $fileName
+ * */
+function xlsWriteExcel($field,$header,$data,$fileName='自定义导出'){
+    require_once Yii::getAlias('@vendor') . '/phpxlsxwriter/vendor/autoload.php';
+    header("Content-Type: text/html;charset=utf-8");
+    error_reporting(E_ALL);
+    set_time_limit(0);
+    ob_start();
+    $sheet = 'Sheet1';
+    $writer = new \XLSXWriter();
+    $field = explode(',',$field);
+    $header = explode(',',$header);
+    $header = array_fill_keys($header,"string");
+    $styles1 = array(
+        'font'=>'宋体','font-size'=>10,'font-style'=>'bold', 'fill'=>'#eee',
+        'halign'=>'center','border'=>'left,right,top,bottom'
+    );
+    $title = array_keys($header);
+    $writer->writeSheetRow($sheet, $title, $styles1);
+    if(!empty($data)){
+        foreach ($data as $k=>$v){
+            foreach ($field as $k1=>$v1){
+                if(isset($v[$v1])){
+                    $rows[$k1] = $v[$v1];
+                }else{
+                    $rows[$k1] = '';
+                }
+            }
+            $writer->writeSheetRow($sheet, $rows, $styles1);
+        }
+    }
+    $filename = $fileName.date('YmdHis',time()).'.xlsx';
+    $tempFile = tempnam(sys_get_temp_dir(), 'excel');
+    $writer->writeToFile($tempFile);
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename=' . $filename);
+    readfile($tempFile);
+    unlink($tempFile);
+}
