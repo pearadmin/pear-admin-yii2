@@ -69,6 +69,10 @@ $this->registerJs($this->render('js/user-list.js'));
         <i class="pear-icon pear-icon-modular"></i>
         部门
     </button>
+    <button class="pear-btn pear-btn-warming pear-btn-md" lay-event="export">
+        <i class="layui-icon layui-icon-download-circle"></i>
+        导出
+    </button>
 </script>
 
 <!--添加人员界面-->
