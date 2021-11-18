@@ -1,8 +1,13 @@
-<div>
+<style>
+    .today-log table{width:100%;text-align:center}
+    .today-log table thead tr th:first-child{text-align: left;text-indent: 14px;}
+    .today-log table tbody tr td:first-child{text-align: left}
+</style>
+<div style="overflow:hidden;">
     <div class="layui-row layui-col-space10">
         <div class="layui-col-xs6 layui-col-md3">
             <div class="layui-card top-panel">
-                <div class="layui-card-header">今日访问</div>
+                <div class="layui-card-header">今日操作量（此账号）</div>
                 <div class="layui-card-body">
                     <div class="layui-row layui-col-space5">
                         <div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value1">
@@ -33,7 +38,7 @@
         </div>
         <div class="layui-col-xs6 layui-col-md3">
             <div class="layui-card top-panel">
-                <div class="layui-card-header">提交次数</div>
+                <div class="layui-card-header">总操作量（此账号）</div>
                 <div class="layui-card-body">
                     <div class="layui-row layui-col-space5">
                         <div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value2">
@@ -71,7 +76,7 @@
         </div>
         <div class="layui-col-xs6 layui-col-md3">
             <div class="layui-card top-panel">
-                <div class="layui-card-header">下载数量</div>
+                <div class="layui-card-header">今日操作量</div>
                 <div class="layui-card-body">
                     <div class="layui-row layui-col-space5">
                         <div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value3">
@@ -101,7 +106,7 @@
         </div>
         <div class="layui-col-xs6 layui-col-md3">
             <div class="layui-card top-panel">
-                <div class="layui-card-header">流量统计</div>
+                <div class="layui-card-header">总操作量</div>
                 <div class="layui-card-body">
                     <div class="layui-row layui-col-space5">
                         <div class="layui-col-xs8 layui-col-md8 top-panel-number" style="color: #28333E;" id="value4">
@@ -142,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="layui-card">
+            <div class="layui-card" style="display: none">
                 <div class="layui-card-header">动态</div>
                 <div class="layui-card-body">
                     <dl class="layuiadmin-card-status">
@@ -199,9 +204,9 @@
         </div>
         <div class="layui-col-md3">
             <div class="layui-card">
-                <div class="layui-card-header">最近更新</div>
-                <div class="layui-card-body">
-                    <ul class="list">
+                <div class="layui-card-header">今日操作统计</div>
+                <div class="layui-card-body today-log">
+                    <!--<ul class="list">
                         <li class="list-item"><span class="title">优化代码格式</span><span class="footer">2020-06-04 11:28</span></li>
                         <li class="list-item"><span class="title">新增消息组件</span><span class="footer">2020-06-01 04:23</span></li>
                         <li class="list-item"><span class="title">移动端兼容</span><span class="footer">2020-05-22 21:38</span></li>
@@ -210,49 +215,66 @@
                         <li class="list-item"><span class="title">兼容多标签页切换</span><span class="footer">2019-12-9 14:58</span></li>
                         <li class="list-item"><span class="title">扩展下拉组件</span><span class="footer">2019-12-7 9:06</span></li>
                         <li class="list-item"><span class="title">扩展卡片样式</span><span class="footer">2019-12-1 10:26</span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="layui-card">
-                <div class="layui-card-header">
-                    链接
-                </div>
-                <div class="layui-card-body">
-                    <a target="_blank" href="http://www.pearadmin.com" class="pear-btn pear-btn-success layui-btn-fluid" style="height: 50px;line-height: 50px;">官 网</a>
-                    <br/>
-                    <a target="_blank" href="http://www.pearadmin.com/doc/" class="pear-btn pear-btn-primary  layui-btn-fluid" style="margin-top: 8px;height: 50px;line-height: 50px;">文 档</a>
-                    <br/>
-                    <a target="_blank" href="https://gitee.com/pear-admin/Pear-Admin-Layui" class="pear-btn pear-btn-warming  layui-btn-fluid" style="margin-top: 8px;height: 50px;line-height: 50px;">下 载</a>
+                    </ul>-->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>IP</th>
+                                <th>操作量</th>
+                                <th>日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script>
-    layui.use(['layer', 'echarts', 'element', 'count','topBar'], function() {
+
+    layui.config({
+    }).use(['layer', 'echarts', 'element', 'count','topBar','ajax'], function() {
         var $ = layui.jquery,
             layer = layui.layer,
             element = layui.element,
             count = layui.count,
+            ajax = layui.ajax,
             echarts = layui.echarts;
+
+        var data ;
+        $.ajax({
+            type: "post",
+            data: {},
+            url: "/site/getwebinfo",
+            async: false,
+            dataType: "json",
+            success: function(d){
+                data = d;
+                data.todayLogs.forEach(function (r) {
+                    $(".today-log table").append("<tr><td>"+r.ip+"</td><td>"+r.num+"</td><td>"+r.FROM_UNIXTIME+"</td></tr>");
+                })
+            }
+        });
 
         count.up("value1", {
             time: 4000,
-            num: 440.34,
+            num: data.logsNumTodaySelf,
             bit: 2,
             regulator: 50
         })
 
         count.up("value2", {
             time: 4000,
-            num: 236.30,
+            num: data.logsNumSelf,
             bit: 2,
             regulator: 50
         })
 
         count.up("value3", {
             time: 4000,
-            num: 634.43,
+            num: data.todayLogsNum,
             bit: 2,
             regulator: 50
         })
@@ -260,7 +282,7 @@
         count.up("value4", {
             time: 4000,
             bit: 2,
-            num: 373.23,
+            num: data.totalLogsNum,
             regulator: 50
         })
 
@@ -272,7 +294,7 @@
             },
             xAxis: [{
                 type: 'category',
-                data: ['2019-01', '2019-02', '2019-03', '2019-04', '2019-05', '2019-06'],
+                data: data.x,
                 axisLine: {
                     lineStyle: {
                         color: "#999"
@@ -302,9 +324,9 @@
                 }
             }],
             series: [{
-                name: '课时',
+                name: '操作总次数',
                 type: 'line',
-                data: [23, 60, 20, 36, 23, 85],
+                data: data.y,
                 lineStyle: {
                     normal: {
                         width: 8,
