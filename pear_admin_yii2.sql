@@ -423,3 +423,22 @@ INSERT INTO `yp_auth_assignment` VALUES ('角色列表', '2', '1626186757');
 INSERT INTO `yp_auth_assignment` VALUES ('超级管理员', '1', '1616219246');
 INSERT INTO `yp_auth_assignment` VALUES ('路由分配', '2', '1626186757');
 INSERT INTO `yp_auth_assignment` VALUES ('部门管理', '2', '1626186757');
+
+-- ----------------------------
+-- Table structure for ts_pro_admin_log
+-- ----------------------------
+DROP TABLE IF EXISTS `yp_admin_log`;
+CREATE TABLE `yp_admin_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `route` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `user_agent` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `gets` text COLLATE utf8_unicode_ci,
+  `posts` text COLLATE utf8_unicode_ci NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `admin_email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
